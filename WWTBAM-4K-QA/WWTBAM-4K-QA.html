@@ -203,6 +203,19 @@
       font-size: 37px;
       top: 986px;
     }
+    .gwd-p-1sde {
+      position: absolute;
+      color: rgb(255, 255, 255);
+      font-family: "Trebuchet MS";
+      line-height: 37px;
+      text-align: center;
+      font-size: 37px;
+      width: 1579px;
+      transform-origin: 50% 50% 0px;
+      left: 170px;
+      height: 46px;
+      top: 795px;
+    }
     @media (width: 1920px) and (height: 1080px) {}
   </style>
   <script data-source="gwd_webcomponents_v1_min.js" data-version="2" data-exports-type="gwd_webcomponents_v1" src="gwd_webcomponents_v1_min.js"></script>
@@ -219,13 +232,13 @@
     <gwd-pagedeck class="gwd-page-container" id="pagedeck">
       <gwd-page id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox" data-gwd-width="100%" data-gwd-height="100%">
         <div class="gwd-page-content gwd-page-size">
-          <gwd-image id="AC" source="assets/AC.png" scaling="stretch" class="gwd-image-xw22"></gwd-image>
-          <gwd-image id="BD" source="assets/BD.png" scaling="stretch" class="gwd-image-bm30"></gwd-image>
-          <gwd-image id="AC_1" source="assets/AC.png" scaling="stretch" class="gwd-image-1bkm"></gwd-image>
-          <gwd-image id="BD_1" source="assets/BD.png" scaling="stretch" class="gwd-image-95ch"></gwd-image>
-          <gwd-image source="assets/Q.png" scaling="stretch" class="gwd-image-6ghh" id="Q"></gwd-image>
-          <p class="gwd-p-yqvi" id="Q_text">Прашање 1 линија<br class=""><span class="gwd-span-1lxa">Прашање 2 линија</span><br class=""></p>
-          <span class="gwd-span-1swk" id="A_Mark">А:</span><span class="gwd-span-87zp" id="AnswerA_text">Одговор А</span><span class="gwd-span-1ytm" id="B_Mark">B:</span><span class="gwd-span-aia2" id="AnswerB_text">Одговор B</span><span class="gwd-span-27tz" id="C_Mark">C:</span><span class="gwd-span-ffbf" id="AnswerC_text">Одговор C</span><span class="gwd-span-huyh" id="D_Mark">D:</span><span class="gwd-span-1mja" id="AnswerD_text">Одговор D</span></div>
+          <gwd-image id="AC" source="assets/AC.png" scaling="stretch" class="gwd-image-xw22" data-gwd-tl-locked=""></gwd-image>
+          <gwd-image id="BD" source="assets/BD.png" scaling="stretch" class="gwd-image-bm30" data-gwd-tl-locked=""></gwd-image>
+          <gwd-image id="AC_1" source="assets/AC.png" scaling="stretch" class="gwd-image-1bkm" data-gwd-tl-locked=""></gwd-image>
+          <gwd-image id="BD_1" source="assets/BD.png" scaling="stretch" class="gwd-image-95ch" data-gwd-tl-locked=""></gwd-image>
+          <gwd-image source="assets/Q.png" scaling="stretch" class="gwd-image-6ghh" id="Q" data-gwd-tl-locked=""></gwd-image>
+          <p class="gwd-p-yqvi" id="Qmulti_text" data-gwd-tl-locked="">Прашање 1 линија<br class=""><span class="gwd-span-1lxa">Прашање 2 линија</span><br class=""></p>
+          <p class="gwd-p-1sde" id="Qsingle_text" data-gwd-tl-locked="">Прашање 1 линија текст<br class=""></p><span class="gwd-span-1swk" id="A_Mark" data-gwd-tl-locked="">А:</span><span class="gwd-span-87zp" id="AnswerA_text" data-gwd-tl-locked="">Одговор А</span><span class="gwd-span-1ytm" id="B_Mark" data-gwd-tl-locked="">B:</span><span class="gwd-span-aia2" id="AnswerB_text" data-gwd-tl-locked="">Одговор B</span><span class="gwd-span-27tz" id="C_Mark" data-gwd-tl-locked="">C:</span><span class="gwd-span-ffbf" id="AnswerC_text" data-gwd-tl-locked="">Одговор C</span><span class="gwd-span-huyh" id="D_Mark" data-gwd-tl-locked="">D:</span><span class="gwd-span-1mja" id="AnswerD_text" data-gwd-tl-locked="">Одговор D</span></div>
       </gwd-page>
     </gwd-pagedeck>
   </gwd-google-ad>
@@ -280,7 +293,7 @@
       element0.classList.add('animate__animated', animateElements);
       element1.classList.add('animate__animated', animateElements);
     }
-    
+
     function finalA() {
       document.querySelector("#AC > div > img").src = "assets/AC final.png";
     }
@@ -326,36 +339,85 @@
     const element3 = document.querySelector("#AC_1");
     const element4 = document.querySelector("#BD_1");
 
-    const element0text = document.querySelector("#Q_text");
+    const elementQmulti_text = document.querySelector("#Qmulti_text");
+    const elementQsingle_text = document.querySelector("#Qsingle_text");
+
     const element1text = document.querySelector("#AnswerA_text");
     const element2text = document.querySelector("#AnswerB_text");
     const element3text = document.querySelector("#AnswerC_text");
     const element4text = document.querySelector("#AnswerD_text");
-    
+
     const element1mark = document.querySelector("#A_Mark");
     const element2mark = document.querySelector("#B_Mark");
     const element3mark = document.querySelector("#C_Mark");
     const element4mark = document.querySelector("#D_Mark");
+
+    const allElements = [element0, element1, element2, element3, element4, elementQmulti_text, elementQsingle_text, element1text, element2text, element3text, element4text, element1mark, element2mark, element3mark, element4mark];
+
+    const questionElements = [element0, elementQmulti_text, elementQsingle_text];
+    const answerElements = [element1, element2, element3, element4];
+    const answerTextElements = [element1text, element2text, element3text, element4text];
+    const answerMarkElements = [element1mark, element2mark, element3mark, element4mark];
+    const answerTextMarkElements = [element1text, element2text, element3text, element4text, element1mark, element2mark, element3mark, element4mark];
     
-    const allElements= [element0, element1, element2, element3, element4, element0text, element1text, element2text, element3text, element4text, element1mark,             element2mark, element3mark, element4mark];    
-    
-    moveQuestionAnswersElementsDown(); //on load we don't want anything
+    prepareHTMLtemplate();
     
     function update(arg) {
       json = JSON.parse(arg);
-      if (json.contestantClockTxt != undefined) {
-        contestantClock = json.contestantClockTxt;
-        $("#contestantClockTxt").html(json.contestantClockTxt);
+      if (json.QuestionML_TextField != undefined) {
+        elementQmulti_text.innerHTML = json.QuestionML_TextField;
+        elementQsingle_text.innerHTML = "";
+      }
+      if (json.QuestionSL_TextField != undefined) {
+        elementQsingle_text.innerHTML = json.QuestionML_TextField;
+        elementQmulti_text.innerHTML = "";
+      }
+
+      if (json.AnswerA_TextField != undefined) {
+        element1text.innerHTML = json.AnswerA_TextField;
+      }
+      if (json.AnswerB_TextField != undefined) {
+        element2text.innerHTML = json.AnswerB_TextField;
+      }
+      if (json.AnswerC_TextField != undefined) {
+        element3text.innerHTML = json.AnswerC_TextField;
+      }
+      if (json.AnswerD_TextField != undefined) {
+        element4text.innerHTML = json.AnswerD_TextField;
+      }
+
+      if (json.MarkA_TextField != undefined) {
+        element1mark.innerHTML = json.MarkA_TextField;
+      }
+      if (json.MarkB_TextField != undefined) {
+        element2mark.innerHTML = json.MarkB_TextField;
+      }
+      if (json.MarkC_TextField != undefined) {
+        element3mark.innerHTML = json.MarkC_TextField;
+      }
+      if (json.MarkD_TextField != undefined) {
+        element4mark.innerHTML = json.MarkD_TextField;
       }
     }
-    
-    function bounceQuestionUp(){
-      const elementsQuestion = [
-        { el: element0, top: '918px', startTop: '1748px' },
-        { el: element0text, top: '947px', startTop: '1777px' }
-      ];
 
-      elementsQuestion.forEach(({ el, top, startTop }) => {
+    function bounceQuestionUp() {
+      const elementsQuestion = [{
+        el: element0,
+        top: '918px',
+        startTop: '1748px'
+      }, {
+        el: elementQmulti_text,
+        top: '947px',
+        startTop: '1777px'
+      }, {
+        el: elementQsingle_text,
+        top: '965px',
+        startTop: '1795px'
+      }];
+
+      elementsQuestion.forEach(({
+        el, top, startTop
+      }) => {
         el.style.position = 'absolute';
         el.style.transition = 'top 0.9s ease'; //=900 settimeout
         el.style.top = startTop; // Start position off-screen or below the final position
@@ -369,15 +431,18 @@
           }, 900); // Wait for the first animation to complete
         }, 1); // Initial delay before starting the animation
       });
-    }    
-    
+    }
+
     function flyQuestionUp() {
       const elements = [{
         el: element0,
         top: '918px'
       }, {
-        el: element0text,
+        el: elementQmulti_text,
         top: '947px'
+      }, {
+        el: elementQsingle_text,
+        top: '965px'
       }];
 
       elements.forEach(({
@@ -387,15 +452,18 @@
         el.style.transition = 'top 1s ease-out';
         el.style.top = top;
       });
-    } 
-    
+    }
+
     function flyQuestionAnswersElementsUp() {
       const elementsQuestion = [{
         el: element0,
         top: '748px'
       }, {
-        el: element0text,
+        el: elementQmulti_text,
         top: '777px'
+      }, {
+        el: elementQsingle_text,
+        top: '795px'
       }];
 
       elementsQuestion.forEach(({
@@ -405,7 +473,7 @@
         el.style.transition = 'top 0.6s ease';
         el.style.top = top;
       });
-      
+
       const elements = [{
         el: element1,
         top: '880px'
@@ -473,7 +541,7 @@
       });
 
     }
-    
+
     function flyQuestionAnswersElementsDown() {
 
       const elements = [{
@@ -502,8 +570,11 @@
       });
 
       const elementsText = [{
-        el: element0text,
+        el: elementQmulti_text,
         top: '1777px'
+      }, {
+        el: elementQsingle_text,
+        top: '1795px'
       }, {
         el: element1text,
         top: '1905px'
@@ -549,7 +620,7 @@
       });
 
     }
-        
+
     function moveQuestionAnswersElementsUp() {
       const elements = [{
         el: element0,
@@ -567,9 +638,12 @@
         el: element4,
         top: '966px'
       }, {
-        el: element0text,
+        el: elementQmulti_text,
         top: '777px'
       }, {
+        el: elementQsingle_text,
+        top: '795px'
+      }, {        
         el: element1text,
         top: '903px'
       }, {
@@ -602,7 +676,7 @@
         el.style.top = top;
       });
     }
-    
+
     function moveQuestionAnswersElementsDown() {
       const elements = [{
         el: element0,
@@ -620,8 +694,11 @@
         el: element4,
         top: '1966px'
       }, {
-        el: element0text,
+        el: elementQmulti_text,
         top: '1777px'
+      }, {
+        el: elementQsingle_text,
+        top: '1795px'
       }, {
         el: element1text,
         top: '1905px'
@@ -655,67 +732,100 @@
         el.style.top = top;
       });
     }
-       
-    function showQuestionAnswersElements(){
+
+    function prepareHTMLtemplate() {
+      moveQuestionAnswersElementsDown(); //on load we don't want anything
+      hideQuestionAnswersElements();
+      //var elementsPreload = [element0, elementQmulti_text, elementQsingle_text];
+      //appearElements(elementsPreload);
+      disappearElements(allElements);
+    }
+    
+    //WWTBAM.EXE REGION START
+    //backward compatibility
+    function QuestionFlyIN(){
+      flyQuestionAnswersElementsUp();
+      appearElements(questionElements);
+      disappearElements(answerTextMarkElements);
+    }
+    
+    //backward compatibility
+    function showAnswerA(){
+      var answerElement = [element1text, element1mark];
+      appearElements(answerElement);
+    }        
+    function showAnswerB(){
+      var answerElement = [element2text, element2mark];
+      appearElements(answerElement);
+    }    
+    function showAnswerC(){
+      var answerElement = [element3text, element3mark];
+      appearElements(answerElement);
+    }    
+    function showAnswerD(){
+      var answerElement = [element4text, element4mark];
+      appearElements(answerElement);
+    }    
+    //WWTBAM.EXE REGION END
+    
+    function showQuestionAnswersElements() {
       // Function to apply fade-out effect
       moveQuestionAnswersElementsUp()
       appearElements(allElements);
-    }     
-    
-    function hideQuestionAnswersElements(){
+    }
+
+    function hideQuestionAnswersElements() {
       // Function to apply fade-out effect
       disappearElements(allElements);
       setTimeout(() => {
         moveQuestionAnswersElementsDown(allElements);
         appearElements(allElements);
       }, 200);
-    }     
-    
-    function fadeInQuestionAnswersElements(){
+    }
+
+    function fadeInQuestionAnswersElements() {
       // Function to apply fade-out effect 
       moveQuestionAnswersElementsUp()
       fadeInElements(allElements);
-    }     
-    
-    function fadeOutQuestionAnswersElements(){
-      fadeOutElements(allElements);      
+    }
+
+    function fadeOutQuestionAnswersElements() {
+      fadeOutElements(allElements);
       setTimeout(() => {
         moveQuestionAnswersElementsDown(allElements);
         appearElements(allElements);
       }, 1200);
-    }     
-    
+    }
+
     //**internal function**//
-    function fadeInElements(elements) { 
+    function fadeInElements(elements) {
       elements.forEach(el => {
         el.style.transition = 'opacity 1s ease';
         el.style.opacity = '1';
       });
     }
-   
+
     //**internal function**//
-    function fadeOutElements(elements) {            
+    function fadeOutElements(elements) {
       elements.forEach(el => {
         el.style.transition = 'opacity 1s ease';
         el.style.opacity = '0';
       });
-    }    
-    
+    }
+
     //**internal function**//
     function appearElements(elements) {
       elements.forEach(el => {
-        el.style.transition = 'opacity 0s';
         el.style.opacity = '1';
       });
     }
-   
+
     //**internal function**//
     function disappearElements(elements) {
       elements.forEach(el => {
-        el.style.transition = 'opacity 0s';
         el.style.opacity = '0';
       });
-    }    
+    }
   </script>
 </body>
 
