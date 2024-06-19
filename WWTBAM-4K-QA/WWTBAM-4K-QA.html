@@ -67,35 +67,35 @@
       height: 89px;
       width: 967.94px;
       top: 880px;
-      left: 1px;
+      left: -8px;
     }
     .gwd-image-bm30 {
       position: absolute;
       height: 89px;
       width: 950.85px;
-      left: 969px;
       top: 883px;
+      left: 960px;
     }
     .gwd-image-6ghh {
       position: absolute;
       height: 137px;
       width: 1916.05px;
-      left: -3px;
       top: 748px;
+      left: -12px;
     }
     .gwd-image-1bkm {
       position: absolute;
       height: 89px;
       width: 967.94px;
-      left: -1px;
       top: 963px;
+      left: -10px;
     }
     .gwd-image-95ch {
       position: absolute;
       height: 89px;
       width: 950.85px;
-      left: 969px;
       top: 966px;
+      left: 960px;
     }
     .gwd-p-yqvi {
       position: absolute;
@@ -108,7 +108,7 @@
       font-size: 37px;
       width: 1579px;
       transform-origin: 50% 50% 0px;
-      left: 170px;
+      left: 161px;
     }
     .gwd-span-1lxa {
       line-height: 37px;
@@ -121,14 +121,13 @@
       text-align: center;
       width: 60px;
       height: 46px;
-      left: 180px;
       color: rgb(221, 128, 13);
       font-size: 37px;
       top: 903px;
+      left: 171px;
     }
     .gwd-span-87zp {
       position: absolute;
-      left: 240px;
       height: 46px;
       font-family: "Trebuchet MS";
       color: rgb(255, 255, 255);
@@ -136,6 +135,7 @@
       width: 690px;
       font-size: 37px;
       top: 903px;
+      left: 231px;
     }
     .gwd-span-1ytm {
       position: absolute;
@@ -144,9 +144,9 @@
       width: 60px;
       height: 46px;
       color: rgb(221, 128, 13);
-      left: 996px;
       font-size: 37px;
       top: 903px;
+      left: 987px;
     }
     .gwd-span-aia2 {
       position: absolute;
@@ -155,9 +155,9 @@
       color: rgb(255, 255, 255);
       text-align: left;
       width: 690px;
-      left: 1056px;
       font-size: 37px;
       top: 903px;
+      left: 1047px;
     }
     .gwd-span-27tz {
       position: absolute;
@@ -165,14 +165,13 @@
       text-align: center;
       width: 60px;
       height: 46px;
-      left: 180px;
       color: rgb(221, 128, 13);
       font-size: 37px;
       top: 986px;
+      left: 171px;
     }
     .gwd-span-ffbf {
       position: absolute;
-      left: 240px;
       height: 46px;
       font-family: "Trebuchet MS";
       color: rgb(255, 255, 255);
@@ -180,6 +179,7 @@
       width: 690px;
       font-size: 37px;
       top: 986px;
+      left: 231px;
     }
     .gwd-span-huyh {
       position: absolute;
@@ -188,9 +188,9 @@
       width: 60px;
       height: 46px;
       color: rgb(221, 128, 13);
-      left: 996px;
       font-size: 37px;
       top: 986px;
+      left: 987px;
     }
     .gwd-span-1mja {
       position: absolute;
@@ -199,9 +199,9 @@
       color: rgb(255, 255, 255);
       text-align: left;
       width: 690px;
-      left: 1056px;
       font-size: 37px;
       top: 986px;
+      left: 1047px;
     }
     .gwd-p-1sde {
       position: absolute;
@@ -212,18 +212,18 @@
       font-size: 37px;
       width: 1579px;
       transform-origin: 50% 50% 0px;
-      left: 170px;
       height: 46px;
       top: 795px;
+      left: 161px;
     }
     @media (width: 1920px) and (height: 1080px) {}
   </style>
   <script data-source="gwd_webcomponents_v1_min.js" data-version="2" data-exports-type="gwd_webcomponents_v1" src="gwd_webcomponents_v1_min.js"></script>
   <script data-source="gwdpage_min.js" data-version="13" data-exports-type="gwd-page" src="gwdpage_min.js"></script>
   <script data-source="gwdpagedeck_min.js" data-version="14" data-exports-type="gwd-pagedeck" src="gwdpagedeck_min.js"></script>
-  <script data-source="https://s0.2mdn.net/ads/studio/Enabler.js" data-exports-type="gwd-google-ad" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
   <script data-source="gwdgooglead_min.js" data-version="9" data-exports-type="gwd-google-ad" src="gwdgooglead_min.js"></script>
   <script data-source="gwdimage_min.js" data-version="17" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
+  <script data-source="https://s0.2mdn.net/ads/studio/Enabler.js" data-exports-type="gwd-google-ad" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
 </head>
 
 <body>
@@ -296,18 +296,26 @@
 
     function finalA() {
       document.querySelector("#AC > div > img").src = "assets/AC final.png";
+      changeTextColor(element1mark, 'white');
+      changeTextColor(element1text, 'black');
     }
 
     function finalB() {
       document.querySelector("#BD > div > img").src = "assets/BD final.png";
+      changeTextColor(element2mark, 'white');
+      changeTextColor(element2text, 'black');
     }
 
     function finalC() {
       document.querySelector("#AC_1 > div > img").src = "assets/AC final.png";
+      changeTextColor(element3mark, 'white');
+      changeTextColor(element3text, 'black');
     }
 
     function finalD() {
       document.querySelector("#BD_1 > div > img").src = "assets/BD final.png";
+      changeTextColor(element4mark, 'white');
+      changeTextColor(element4text, 'black');
     }
 
     function correctA() {
@@ -359,10 +367,10 @@
     const answerTextElements = [element1text, element2text, element3text, element4text];
     const answerMarkElements = [element1mark, element2mark, element3mark, element4mark];
     const answerTextMarkElements = [element1text, element2text, element3text, element4text, element1mark, element2mark, element3mark, element4mark];
-    
+
     prepareHTMLtemplate();
-    
-    function update(arg) {
+
+    /*function update(arg) {
       json = JSON.parse(arg);
       if (json.QuestionML_TextField != undefined) {
         elementQmulti_text.innerHTML = json.QuestionML_TextField;
@@ -398,8 +406,62 @@
       if (json.MarkD_TextField != undefined) {
         element4mark.innerHTML = json.MarkD_TextField;
       }
+    }*/
+
+    ////update data;
+
+    var xmlDoc;
+
+    function update(arguments) {
+      //alert(arguments);
+      try {
+        if (window.DOMParser) {
+          parser = new DOMParser();
+          xmlDoc = parser.parseFromString(arguments, "application/xml");
+        }
+        var questionML_TextField = getValueById("QuestionML_TextField");
+        var questionSL_TextField = getValueById("QuestionSL_TextField");
+        if (questionML_TextField != '') {
+          elementQmulti_text.innerHTML = questionML_TextField.replace(/\|/g, '<br>');
+          elementQsingle_text.innerHTML = "";
+        } else if (questionSL_TextField != '') {
+          elementQsingle_text.innerHTML = questionSL_TextField;
+          elementQmulti_text.innerHTML = "";
+        }
+        var answerA_TextField = getValueById("AnswerA_TextField");
+        if (answerA_TextField != undefined) {
+          element1text.innerHTML = answerA_TextField;
+        }
+        var answerB_TextField = getValueById("AnswerB_TextField");
+        if (answerB_TextField != undefined) {
+          element2text.innerHTML = answerB_TextField;
+        }
+        var answerC_TextField = getValueById("AnswerC_TextField");
+        if (answerC_TextField != undefined) {
+          element3text.innerHTML = answerC_TextField;
+        }
+        var answerD_TextField = getValueById("AnswerD_TextField");
+        if (answerD_TextField != undefined) {
+          element4text.innerHTML = answerD_TextField;
+        }
+      } catch (e) {
+        //
+      }
     }
 
+    // Function to get the value by id
+    function getValueById(id) {
+      const componentData = xmlDoc.querySelector(`componentData[id="${id}"]`);
+      if (componentData) {
+        const data = componentData.querySelector('data[id="text"]');
+        if (data) {
+          return data.getAttribute('value');
+        }
+      }
+      return null;
+    }
+
+    ////update data
     function bounceQuestionUp() {
       const elementsQuestion = [{
         el: element0,
@@ -643,7 +705,7 @@
       }, {
         el: elementQsingle_text,
         top: '795px'
-      }, {        
+      }, {
         el: element1text,
         top: '903px'
       }, {
@@ -740,34 +802,73 @@
       //appearElements(elementsPreload);
       disappearElements(allElements);
     }
-    
+
     //WWTBAM.EXE REGION START
     //backward compatibility
-    function QuestionFlyIN(){
+    function QuestionFlyIN() {
       flyQuestionAnswersElementsUp();
       appearElements(questionElements);
       disappearElements(answerTextMarkElements);
     }
-    
+
     //backward compatibility
-    function showAnswerA(){
+    function showAnswerA() {
       var answerElement = [element1text, element1mark];
       appearElements(answerElement);
-    }        
-    function showAnswerB(){
+    }
+
+    //backward compatibility
+    function showAnswerB() {
       var answerElement = [element2text, element2mark];
       appearElements(answerElement);
-    }    
-    function showAnswerC(){
+    }
+
+    //backward compatibility
+    function showAnswerC() {
       var answerElement = [element3text, element3mark];
       appearElements(answerElement);
-    }    
-    function showAnswerD(){
+    }
+
+    //backward compatibility
+    function showAnswerD() {
       var answerElement = [element4text, element4mark];
       appearElements(answerElement);
-    }    
+    }
+
+    function correctAnswer1() {
+      correctA();
+    }
+
+    function correctAnswer2() {
+      correctB();
+    }
+
+    function correctAnswer3() {
+      correctC();
+    }
+
+    function correctAnswer4() {
+      correctD();
+    }
+
+    function finalAnswer1() {
+      finalA();
+    }
+
+    function finalAnswer2() {
+      finalB();
+    }
+
+    function finalAnswer3() {
+      finalC();
+    }
+
+    function finalAnswer4() {
+      finalD();
+    }
+
     //WWTBAM.EXE REGION END
-    
+
     function showQuestionAnswersElements() {
       // Function to apply fade-out effect
       moveQuestionAnswersElementsUp()
@@ -825,6 +926,19 @@
       elements.forEach(el => {
         el.style.opacity = '0';
       });
+    }
+
+    function changeTextColor(element, color) {
+      // Get the element by its ID
+      var textElement = element;
+      // Change the text color to black
+      textElement.style.color = color;
+    }
+    
+    function flipHorizontally(element){
+      // Apply horizontal flip and move down 100px
+      element.style.transform = "rotateX(180deg)";
+      element.style.transition = 'transform 1.5s ease-in';
     }
   </script>
 </body>
