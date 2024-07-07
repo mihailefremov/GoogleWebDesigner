@@ -51,7 +51,7 @@
       transform-style: preserve-3d;
     }
     .gwd-page-wrapper {
-      background-color: rgb(255, 255, 255);
+      background-color: transparent;
       position: absolute;
       transform: translateZ(0px);
     }
@@ -116,6 +116,17 @@
       left: 1247px;
       top: 181px;
     }
+    #PAFSpirals {
+      animation: spin 30s infinite linear;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
     @media (width: 1920px) and (height: 1080px) {}
   </style>
   <script data-source="gwd_webcomponents_v1_min.js" data-version="2" data-exports-type="gwd_webcomponents_v1" src="gwd_webcomponents_v1_min.js"></script>
@@ -133,7 +144,7 @@
         <div class="gwd-page-content gwd-page-size gwd-div-stc3">
           <gwd-image id="PAFbackground" source="assets/PAFbackground.png" scaling="stretch" class="gwd-image-18dh"></gwd-image>
           <gwd-image id="PAFSpirals" source="assets/PAFSpirals.png" scaling="stretch" class="gwd-image-tfi7"></gwd-image>
-          <p class="gwd-p-1ua3">30</p>
+          <p class="gwd-p-1ua3" id="timer">30</p>
           <gwd-image id="clockDots" source="assets/clock30.png" scaling="stretch" class="gwd-image-wety"></gwd-image>
         </div>
       </gwd-page>
@@ -177,6 +188,71 @@
       window.addEventListener('adinitialized',
         handleAdInitialized, false);
     })();
+
+    let countdown = 30;
+    let timerElement = document.getElementById('timer');
+    let interval;
+
+    PAFbackground.style.opacity = '0';
+    PAFSpirals.style.opacity = '0';
+    clockDots.style.opacity = '0';
+    timerElement.style.opacity = '0';
+    
+    function startPhoneAFriend() {
+      countdown = 30; // Reset the countdown to 30 seconds
+      timerElement.textContent = countdown; // Update the timer display
+      clearInterval(interval); // Clear any existing intervals to avoid multiple intervals running simultaneously
+
+      document.querySelector("#clockDots > div > img").src = "assets/clock" + countdown + ".png";
+      
+      interval = setInterval(() => {
+        if (countdown > 0) {
+          countdown--;
+          timerElement.textContent = countdown;
+          document.querySelector("#clockDots > div > img").src = "assets/clock" + countdown + ".png";
+        } else {
+          endPhoneAFriend();
+        }
+      }, 1000);
+      
+      fadeInElements([PAFbackground, PAFSpirals, clockDots, timerElement], 0.5);
+    }
+
+    function abortPhoneAFriend() {
+      clearInterval(interval); // Clear the interval to stop the countdown
+      //timerElement.textContent = 'Aborted'; // Update the timer display to indicate abortion
+                        
+      fadeOutElements([PAFbackground, PAFSpirals, clockDots, timerElement], 0.5);
+    }
+
+    function endPhoneAFriend() {
+      clearInterval(interval); // Clear the interval to stop the countdown
+      //timerElement.textContent = '0'; // Set the display to '0' to indicate the countdown has ended
+      
+      PAFbackground.style.opacity = '0';
+      PAFSpirals.style.opacity = '0';
+      clockDots.style.opacity = '0';
+      timerElement.style.opacity = '0';
+      
+      fadeOutElements([PAFbackground, PAFSpirals, clockDots, timerElement], 0.5);
+    }
+    
+    //**internal function**//
+    function fadeInElements(elements, speed = 0.5) {
+      elements.forEach(el => {
+        el.style.transition = `opacity ${speed}s ease`;
+        el.style.opacity = '1';
+      });
+    }
+    
+    //**internal function**//
+    function fadeOutElements(elements, speed = 0.5) {
+      elements.forEach(el => {
+        el.style.transition = `opacity ${speed}s ease`;
+        el.style.opacity = '0';
+      });
+    }
+
   </script>
 </body>
 
